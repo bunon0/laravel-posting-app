@@ -27,6 +27,16 @@
         <div>
           <a href="{{ route('posts.create') }}">新規投稿</a>
         </div>
+
+        @foreach ($posts as $post)
+          <div>
+            <div>
+              <h2>{{ $post->title }}</h2>
+              <p>{{ $post->content }}</p>
+              <p>{{ $post->created_at }}</p>
+            </div>
+          </div>
+        @endforeach
       </div>
     </article>
   </main>
