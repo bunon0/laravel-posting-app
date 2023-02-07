@@ -52,4 +52,12 @@ class PostController extends Controller
 
     return redirect()->route('posts.show', $post)->with('flash_message', '投稿を編集しました。');
   }
+
+  // 削除機能
+  public function destroy(Post $post)
+  {
+    $post->delete();
+
+    return redirect()->route('posts.index')->with('flash_message', '投稿を削除しました。');
+  }
 }
